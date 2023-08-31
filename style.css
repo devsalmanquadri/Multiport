@@ -1,0 +1,738 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  user-select: none;
+  scroll-behavior: smooth;
+  font-family: "Andika", sans-serif;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none !important;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100vw;
+  background-color: white;
+}
+.navitems {
+  width: 50vw;
+  font-size: 1.5vw;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.navitems li {
+  list-style-type: none;
+  transition: all 0.3s;
+}
+.navitems li a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.4s;
+}
+.navitems li:hover,
+.navitems li.active a {
+  color: #00abf0;
+  transform: scale(1.1, 1.1);
+  font-weight: 500;
+}
+.logo {
+  font-family: "Andika", sans-serif;
+  color: #00abf0;
+  font-size: 3vw;
+  font-weight: 800;
+  margin-left: 2vw;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+#active1 {
+  display: none;
+}
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+  height: 3em;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: rgb(0, 0, 0);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.page1 {
+  background-color: #e8e8e8;
+  height: auto;
+  padding: 10vw 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.left {
+  padding-left: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.intro {
+  font-size: 4vw;
+  font-weight: 600;
+}
+.intro span {
+  color: #00abf0;
+}
+.About {
+  font-size: 1.5vw;
+  font-weight: 200;
+  font-family: "Andika", sans-serif;
+}
+
+/* ================================================================== */
+.social {
+  margin-top: 3vh;
+  display: flex;
+  width: 20vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.social a button {
+  display: grid;
+  place-items: center;
+  background: #00abf0;
+  padding: 1vw;
+  border-radius: 10px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.social a button:hover {
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transform: translateY(0.5em);
+}
+
+.social a button svg {
+  transition: transform 0.5s;
+}
+
+.social a button:hover svg {
+  transform: scale(0.9);
+  fill: #333333;
+}
+/* +++++++++++++++++++++++++++++++++++++++ */
+
+.right img {
+  width: 28vw;
+  border-radius: 35% 65% 41% 59% / 60% 39% 61% 40%;
+  background: #e0e0e0;
+  box-shadow: 13px 13px 19px #c1c1c1, -13px -13px 19px #ffffff;
+}
+.right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ======================== PAGE 2 ============================== */
+
+.page2 {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.about {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5vw 0;
+  /* text-align: center; */
+}
+.about h2 {
+  margin: 3vw 0;
+  font-size: 3vw;
+}
+.about p {
+  font-size: 2vw;
+  width: 50vw;
+  padding: 2vw 0;
+  padding-left: 1vw;
+}
+
+/* ========================= Button ================================= */
+.about button {
+  height: 60px;
+  width: 300px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+}
+.about button:hover {
+  color: white;
+  /* transform: scale(1.1, 1); */
+  transform: translatey(5%);
+  background-color: #00abf0;
+  box-shadow: 1px 1px 200px #252525;
+  color: #fff;
+  border: none;
+}
+
+.btn-txt {
+  color: #000000;
+  z-index: 1;
+  font-size: 1vw;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.type1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #333;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+.btn-txt:hover {
+  color: white;
+  padding: 5px;
+}
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+
+/* ++++++++++++++++++++++ PAGE 3 ++++++++++++++++++++++++++++++++++ */
+
+.page3 {
+  height: auto;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  background-color: #e0e0e0;
+  padding: 5vw 0;
+}
+.skills h2 {
+  font-size: 3vw;
+}
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40vw;
+}
+.skillup {
+  overflow: visible;
+
+  display: flex;
+  justify-content: space-around;
+  /* overflow-y: hidden; */
+}
+.skilldown {
+  overflow: visible;
+
+  display: flex;
+  justify-content: space-around;
+  /* overflow-y: hidden; */
+}
+.ski-im {
+  margin-top: 5vw;
+}
+.card {
+  overflow: visible;
+  position: relative;
+  width: 350px;
+  aspect-ratio: 16/9;
+  background: linear-gradient(
+      to left top,
+      #10c3fe 0% /*bottom-right color*/,
+      #ffffff 100% /*top-left color*/
+    ),
+    linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #e0e0e0;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card svg {
+  width: 100px;
+  fill: #7e7e7e;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 1vw 1.6vw rgba(107, 107, 107, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  color: black;
+  background-color: #f4f4f4;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 1.1vw;
+  color: #000000;
+  font-weight: 700;
+}
+
+.card:hover svg {
+  scale: 0;
+}
+
+.card__description {
+  margin: 1vw 0 1vw;
+  font-size: 0.7vw;
+  color: #353535;
+  line-height: 1.4;
+}
+
+.secondary {
+  padding: 0.5vw;
+  border-radius: 1vw;
+  background: #00abf0;
+  border: none;
+  color: white;
+  background: transparent;
+  color: #777;
+  border: 1px solid #777;
+}
+.moreskills {
+  overflow-y: hidden;
+}
+.moreskills button {
+  height: 60px;
+  width: 300px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+}
+.moreskills button:hover {
+  color: white;
+  /* transform: scale(1.1, 1); */
+  transform: translatey(5%);
+  background-color: #00abf0;
+  box-shadow: 1px 1px 200px #252525;
+  color: #fff;
+  border: none;
+}
+
+.btn1-txt {
+  color: #000;
+  z-index: 1;
+  font-size: 1vw;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.type2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #333;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+.btn1-txt:hover {
+  color: white;
+}
+.type2:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+
+/* =============================== PAGE 4 ================================= */
+
+.page4 {
+  padding: 10vw 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.container {
+  max-width: 400px;
+  background: #f8f9fd;
+  background: linear-gradient(
+    0deg,
+    rgb(255, 255, 255) 0%,
+    rgb(244, 247, 251) 100%
+  );
+  border-radius: 40px;
+  padding: 25px 35px;
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+  margin: 20px;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: rgb(16, 137, 211);
+}
+
+.form {
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form .input {
+  width: 80%;
+  background: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+  box-shadow: #cff0ff 0px 10px 10px -5px;
+  border-inline: 2px solid transparent;
+}
+
+.form .input::-moz-placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.form .input::placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.form .input:focus {
+  outline: none;
+  border-inline: 2px solid #12b1d1;
+}
+
+.form .login-button {
+  display: block;
+  width: 80%;
+  font-weight: bold;
+  background: linear-gradient(
+    45deg,
+    rgb(16, 137, 211) 0%,
+    rgb(18, 177, 209) 100%
+  );
+  color: white;
+  padding-block: 15px;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.form .login-button:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+}
+
+.form .login-button:active {
+  transform: scale(0.95);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 1vw;
+  color: #00abf0;
+  margin-bottom: 1vw;
+}
+.copyright span {
+  color: red;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+@media screen and (max-width: 600px) {
+  /* * {
+    overflow-x: hidden;
+    opacity: 1;
+  } */
+  .navitems {
+    position: fixed;
+    top: 0;
+    left: -500px;
+    transition: all 0.1s ease-in;
+  }
+
+  #active1:checked ~ .navitems {
+    display: flex;
+    font-size: 30px;
+    height: 50vh;
+    /* line-height: -5vw; */
+    letter-spacing: 1vw;
+    align-items: center;
+    position: fixed;
+    top: 0.1vw;
+    left: -26vw;
+    background-color: #f8f9fd;
+    text-align: center;
+    flex-direction: column;
+    z-index: 1;
+    padding: 50%;
+    margin: 0px;
+    overflow-y: hidden;
+  }
+  #active1:checked ~ .hamburger {
+    overflow-y: hidden;
+    position: fixed;
+    right: 0;
+  }
+  nav {
+    height: 50px;
+    overflow-y: hidden;
+  }
+  .logo {
+    font-size: 5vw;
+  }
+  .hamburger {
+    color: black;
+    display: block;
+    margin-right: 5vw;
+    z-index: 2;
+    overflow-y: hidden;
+  }
+  .page1 {
+    height: 100vh;
+    flex-direction: column-reverse;
+  }
+  .right {
+    height: 70vw;
+    width: 62vw;
+  }
+  .right img {
+    height: 100%;
+    width: 100%;
+    /* width: 28vw; */
+    border-radius: 35% 65% 41% 59% / 60% 39% 61% 40%;
+    background: #ffffff;
+    box-shadow: 0px 0px 0px;
+  }
+  .left {
+    margin: 0;
+    width: 80%;
+  }
+  .intro {
+    margin: 0;
+    font-size: 5vh;
+  }
+  .About {
+    font-size: 2vh;
+  }
+  .social {
+    width: 40vw;
+    height: 8vw;
+    /* background-color:#00abf0; */
+  }
+  .social a button svg {
+    width: 4vw;
+    height: auto;
+    /* background-color: #000; */
+  }
+  /* +++++++++++++++++++ PAGE 2 ++++++++++++++++++++++++++++ */
+  .page2 svg {
+    display: none;
+  }
+  .page2 {
+    justify-content: center;
+    align-items: start;
+    height: auto;
+  }
+  .about h2 {
+    margin: 5vw 0;
+    font-size: 6vw;
+  }
+  .about p {
+    color: #353535;
+    font-size: 4vw;
+    width: 80vw;
+  }
+  .about button {
+    height: 40px;
+    width: 200px;
+    transition: none;
+    margin: 10vw 0;
+  }
+  .about button:hover {
+    color: black;
+    transform: translatey(0%);
+    background-color: #00abf0;
+    box-shadow: 0 0 0 #ffffff;
+    border: 2px solid black;
+  }
+  .btn-txt {
+    font-size: 3vw;
+  }
+
+  .type1::after {
+    transition: none;
+    background-color: #ffffff;
+  }
+  .btn-txt:hover {
+    color: rgb(0, 0, 0);
+  }
+  /* +++++++++++++++++++ PAGE 3 ++++++++++++++++++++++++++++ */
+
+  .ski-im {
+    display: none;
+  }
+  .page3 {
+    height: auto;
+  }
+  .page3 h2 {
+    margin-top: 5vw;
+    font-size: 6vw;
+  }
+  .card__title {
+    font-size: 3vw;
+  }
+  .card__description {
+    font-size: 3vw;
+  }
+  .skills {
+    justify-content: center;
+    width: 100vw;
+  }
+  .skillup {
+    margin-top: 2vw;
+    align-items: center;
+    row-gap: 8vw;
+    flex-direction: column;
+  }
+  .skilldown {
+    margin-top: 8vw;
+    margin-bottom: 8vw;
+    row-gap: 8vw;
+    align-items: center;
+    flex-direction: column;
+  }
+  .card {
+    width: 70vw;
+  }
+  .card svg {
+    width: 20vw;
+    height: auto;
+  }
+  .moreskills button {
+    height: 40px;
+    width: 200px;
+    transition: none;
+    margin-bottom: 8vw;
+  }
+  .moreskills button:hover {
+    color: black;
+    transform: translatey(0%);
+    background-color: #00abf0;
+    box-shadow: 0 0 0 #e0e0e0;
+    border: 2px solid black;
+  }
+  .btn1-txt {
+    font-size: 3vw;
+  }
+
+  .type2::after {
+    transition: none;
+    background-color: #e0e0e0;
+  }
+  .btn1-txt:hover {
+    color: rgb(0, 0, 0);
+  }
+  .page4 {
+    height: auto;
+    margin: 10vh 0;
+  }
+  .page4 svg {
+    display: none;
+  }
+  .copyright {
+    font-size: 4vw;
+  }
+}

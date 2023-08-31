@@ -1,0 +1,498 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  user-select: none;
+  scroll-behavior: smooth;
+  font-family: "Andika", sans-serif;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none !important ;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100vw;
+  background-color: white;
+}
+.navitems {
+  width: 50vw;
+  font-size: 1.5vw;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.navitems li {
+  list-style-type: none;
+  transition: all 0.3s;
+}
+.navitems li a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.4s;
+}
+.navitems li:hover,
+.navitems li.active a {
+  color: #00abf0;
+  transform: scale(1.1, 1.1);
+  font-weight: 500;
+}
+.logo {
+  font-family: "Andika", sans-serif;
+  color: #00abf0;
+  font-size: 3vw;
+  font-weight: 800;
+  margin-left: 2vw;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+#active1 {
+  display: none;
+}
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+  height: 3em;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: rgb(0, 0, 0);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+/* ++++++++++++++++++++++++ PAGE 1 +++++++++++++++++++++++++++++++++++++++ */
+.page1 {
+  background-color: #f2f2f2;
+  height: auto;
+  padding: 10vw 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.contact h2 {
+  font-size: 3vw;
+  text-align: center;
+  margin: 2vw 0;
+}
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.card {
+  background-color: #fff;
+  border-radius: 1vw;
+  padding: 3vw;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2vw;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form {
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  position: relative;
+}
+
+.form .group label {
+  font-size: 1vw;
+  color: rgb(99, 102, 102);
+  position: absolute;
+  top: -1vw;
+  left: 1vw;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form .group input,
+.form .group textarea {
+  padding: 0.8vw;
+  border-radius: 0.5vw;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.8vw;
+  outline: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+.form .group input:placeholder-shown + label,
+.form .group textarea:placeholder-shown + label {
+  top: 10px;
+  background-color: transparent;
+}
+
+.form .group input:focus,
+.form .group textarea:focus {
+  border-color: #3366cc;
+}
+
+.form .group input:focus + label,
+.form .group textarea:focus + label {
+  top: -0.5vw;
+  left: 0.5vw;
+  background-color: #fff;
+  color: #3366cc;
+  font-weight: 600;
+  font-size: 0.8vw;
+}
+
+.form .group textarea {
+  resize: none;
+  height: 6vw;
+}
+
+.form button {
+  background-color: #3366cc;
+  color: #fff;
+  border: none;
+  border-radius: 0.5vw;
+  padding: 0.8vw;
+  font-size: 1vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 31.7vw;
+}
+
+.form button:hover {
+  background-color: #27408b;
+}
+
+/* ++++++++++++++++++++++++ PAGE 2 +++++++++++++++++++++++++++++++++++++++++++ */
+
+.page2 {
+  height: auto;
+  padding: 10vw 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+}
+.follow {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.follow h2 {
+  margin-top: 5vw;
+  font-size: 4vw;
+}
+.fol-img {
+  height: 20vh;
+  width: 35vh;
+  overflow: visible;
+}
+
+/* ++++++++++++++++++++++++++++ */
+
+.button1 {
+  background: transparent;
+  position: relative;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgb(255, 48, 100);
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(255, 48, 100);
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+  margin: 1vw 0;
+}
+
+button span {
+  margin: 10px;
+}
+
+button::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+.button1:hover {
+  color: #fff;
+  border: 1px solid rgb(255, 48, 100);
+}
+
+.button1:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(255, 48, 100);
+}
+
+.button2 {
+  background: transparent;
+  position: relative;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgb(0, 128, 255);
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(0, 128, 255);
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+  margin: 1vw 0;
+}
+
+.button2:hover {
+  color: #fff;
+  border: 1px solid rgb(0, 128, 255);
+}
+
+.button2:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(0, 128, 255);
+}
+
+.button3 {
+  background: transparent;
+  position: relative;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgb(255, 0, 0);
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(255, 0, 0);
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+  margin: 1vw 0;
+}
+
+.button3:hover {
+  color: #fff;
+  border: 1px solid rgb(255, 0, 0);
+}
+
+.button3:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(255, 0, 0);
+}
+
+.button4 {
+  background: transparent;
+  position: relative;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgb(161, 255, 20);
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(164, 253, 30);
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+  margin: 1vw 0;
+}
+
+.button4:hover {
+  color: #fff;
+  border: 1px solid rgb(164, 253, 30);
+}
+
+.button4:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(164, 253, 30);
+}
+.button5 {
+  background: transparent;
+  position: relative;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: black;
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+  margin: 1vw 0;
+}
+
+.button5:hover {
+  color: #fff;
+  border: 1px solid black;
+}
+
+.button5:hover::before {
+  box-shadow: inset 0 0 0 10em black;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 1vw;
+  color: #00abf0;
+  margin-top: 4vw;
+}
+.copyright span {
+  color: red;
+}
+
+@media screen and (max-width: 600px) {
+  * {
+    overflow-x: hidden;
+  }
+  .navitems {
+    position: fixed;
+    top: 0;
+    left: -500px;
+    transition: all 0.1s ease-in;
+  }
+
+  #active1:checked ~ .navitems {
+    display: flex;
+    font-size: 30px;
+    height: 50vh;
+    /* line-height: -5vw; */
+    letter-spacing: 1vw;
+    align-items: center;
+    position: fixed;
+    top: 0.1vw;
+    left: -26vw;
+    background-color: #f8f9fd;
+    text-align: center;
+    flex-direction: column;
+    z-index: 1;
+    padding: 50%;
+    margin: 0px;
+  }
+  #active1:checked ~ .hamburger {
+    position: fixed;
+    right: 0;
+  }
+  nav {
+    height: 50px;
+  }
+  .logo {
+    font-size: 5vw;
+  }
+  .hamburger {
+    color: black;
+    display: block;
+    margin-right: 5vw;
+    z-index: 2;
+  }
+  .contact-img {
+    display: none;
+  }
+  .page1 {
+    height: auto;
+  }
+  .contact h2 {
+    font-size: 8vw;
+    margin: 6vw 0;
+  }
+  .card {
+    width: 60vw;
+    border-radius: 2vw;
+    margin: 4vw 0;
+  }
+  .title {
+    font-size: 4vw;
+  }
+  .form {
+    margin-top: 4vw;
+  }
+  .form .group label {
+    font-size: 2vw; /* +++ */
+  }
+  .form .group input,
+  .form .group textarea {
+    height: auto;
+  }
+  .form .group input:focus + label,
+  .form .group textarea:focus + label {
+    font-size: 1.8vw;
+  }
+  .form .group textarea {
+    height: 8vw;
+  }
+  .form button {
+    font-size: 2vw;
+    width: 103%;
+  }
+  .fol-img {
+    display: none;
+  }
+  .copyright {
+    font-size: 3vw;
+  }
+}

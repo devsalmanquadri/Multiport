@@ -1,0 +1,313 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  user-select: none;
+  scroll-behavior: smooth;
+  font-family: "Andika", sans-serif;
+  font-family: "Roboto", sans-serif;
+  /* overflow-x: hidden; */
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100vw;
+  background-color: white;
+}
+.navitems {
+  width: 50vw;
+  font-size: 1.5vw;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.navitems li {
+  list-style-type: none;
+  transition: all 0.3s;
+}
+.navitems li a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.4s;
+}
+.navitems li:hover,
+.navitems li.active a {
+  color: #00abf0;
+  transform: scale(1.1, 1.1);
+  font-weight: 500;
+}
+.logo {
+  font-family: "Andika", sans-serif;
+  color: #00abf0;
+  font-size: 3vw;
+  font-weight: 800;
+  margin-left: 2vw;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+#active1 {
+  display: none;
+}
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+  height: 3em;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: rgb(0, 0, 0);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+/* +++++++++++++++++++++++ PAGE 1 ++++++++++++++++++++++++++++++++++++++++++ */
+.page1 {
+  height: auto;
+}
+.Skills {
+  margin-top: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: #00abf0; */
+}
+.skill {
+  margin-top: 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-grp1 {
+  width: 80vw;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 6vh 0;
+}
+.card-grp2 {
+  width: 80vw;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Skills h2 {
+  font-size: 5vw;
+  font-weight: 600;
+}
+.Skills h4 {
+  font-size: 2vw;
+  font-weight: 300;
+}
+.card {
+  width: 25vw;
+  height: 65vh;
+  background: #00abf0;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(5, 5, 5);
+  transition: 0.2s ease-in-out;
+  text-align: center;
+}
+
+.img {
+  height: 30%;
+  position: absolute;
+  transition: 0.2s ease-in-out;
+  z-index: 1;
+}
+
+.textBox {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: 0.2s ease-in-out;
+  z-index: 2;
+  width: 80%;
+}
+
+.textBox > .text {
+  font-weight: bold;
+}
+
+.textBox > .head {
+  font-size: 2vw;
+}
+
+.textBox > .price {
+  font-size: 1vw;
+}
+
+.textBox > span {
+  font-size: 0.8vw;
+  color: rgb(83, 83, 83);
+}
+
+.card:hover > .textBox {
+  opacity: 1;
+}
+
+.card:hover > .img {
+  height: 50%;
+  filter: blur(7px);
+  animation: anim 3s infinite;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+.copyright {
+  text-align: center;
+  font-size: 1vw;
+  color: #00abf0;
+  margin-bottom: 1vw;
+}
+.copyright span {
+  color: red;
+}
+
+@media screen and (max-width: 600px) {
+  .navitems {
+    position: fixed;
+    top: 0;
+    left: -500px;
+    transition: all 0.1s ease-in;
+  }
+
+  #active1:checked ~ .navitems {
+    display: flex;
+    font-size: 30px;
+    height: 50vh;
+    /* line-height: -5vw; */
+    letter-spacing: 1vw;
+    align-items: center;
+    position: fixed;
+    top: 0.1vw;
+    left: -26vw;
+    background-color: #f8f9fd;
+    text-align: center;
+    flex-direction: column;
+    z-index: 1;
+    padding: 50%;
+    margin: 0px;
+  }
+  #active1:checked ~ .hamburger {
+    position: fixed;
+    right: 0;
+  }
+  nav {
+    height: 50px;
+  }
+  .logo {
+    font-size: 5vw;
+  }
+  .hamburger {
+    color: black;
+    display: block;
+    margin-right: 5vw;
+    z-index: 2;
+  }
+  .page1 {
+    height: auto;
+  }
+  .card-grp1 {
+    flex-direction: column;
+    width: 80%;
+    height: 20%;
+  }
+  .card-grp2 {
+    flex-direction: column;
+    width: 80%;
+    height: 20%;
+  }
+  .Skills h2 {
+    font-size: 8vw;
+    font-weight: 600;
+  }
+  .Skills h4 {
+    font-size: 4vw;
+    font-weight: 400;
+  }
+  .card {
+    width: 80%;
+    height: 50vh;
+    margin: 4vw 0;
+  }
+  .img {
+    height: auto;
+    width: 40vw;
+  }
+  .textBox {
+    font-size: 4vw;
+  }
+  .textBox > .text {
+    font-weight: bold;
+  }
+
+  .textBox > .head {
+    font-size: 4vw;
+  }
+
+  .textBox > .price {
+    font-size: 2.2vw;
+  }
+
+  .textBox > span {
+    font-size: 1.5vw;
+    color: rgb(53, 53, 53);
+  }
+}

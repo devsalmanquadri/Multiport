@@ -1,0 +1,247 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  user-select: none;
+  scroll-behavior: smooth;
+  font-family: "Andika", sans-serif;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none !important;
+  color: black;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100vw;
+  background-color: white;
+}
+.navitems {
+  width: 50vw;
+  font-size: 1.5vw;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.navitems li {
+  list-style-type: none;
+  transition: all 0.3s;
+}
+.navitems li a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.4s;
+}
+.navitems li:hover,
+.navitems li.active a {
+  color: #00abf0;
+  transform: scale(1.1, 1.1);
+  font-weight: 500;
+}
+.logo {
+  font-family: "Andika", sans-serif;
+  color: #00abf0;
+  font-size: 3vw;
+  font-weight: 800;
+  margin-left: 2vw;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+#active1 {
+  display: none;
+}
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+  height: 3em;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: rgb(0, 0, 0);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+/* ++++++++++++++++++++++++ PAGE 1 +++++++++++++++++++++++++++++++++++++++ */
+.page1 {
+  height: auto;
+  padding: 5vw 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ffffff;
+}
+.about {
+  width: 40vw;
+}
+.about h2 {
+  font-size: 4vw;
+  margin-bottom: 2vw;
+}
+.about h4 {
+  font-size: 2vw;
+  font-weight: 400;
+  margin-bottom: 1vw;
+  color: #2d2d2d;
+}
+.about h6 {
+  font-weight: 400;
+  color: #525252;
+  font-size: 1.3vw;
+}
+.abt-img {
+  width: 40vw;
+}
+
+/* ++++++++++++++++ PAGE 2 ++++++++++++++++++++ */
+
+.page2 {
+  background-color: #e0e0e0;
+  height: auto;
+  padding: 10vw 0;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.page2 h1 {
+  height: 5vw;
+  font-size: 4vw;
+  margin-bottom: 2vw;
+}
+.info {
+  font-size: 2vw;
+  line-height: 3.5vw;
+  letter-spacing: 3px;
+}
+.info h4 span {
+  color: #00abf0;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 1vw;
+  color: #00abf0;
+  margin-bottom: 0.4vw;
+}
+.copyright span {
+  color: red;
+}
+
+@media screen and (max-width: 600px) {
+  .navitems {
+    position: fixed;
+    top: 0;
+    left: -500px;
+    transition: all 0.1s ease-in;
+  }
+
+  #active1:checked ~ .navitems {
+    display: flex;
+    font-size: 30px;
+    height: 50vh;
+    /* line-height: -5vw; */
+    letter-spacing: 1vw;
+    align-items: center;
+    position: fixed;
+    top: 0.1vw;
+    left: -26vw;
+    background-color: #f8f9fd;
+    text-align: center;
+    flex-direction: column;
+    z-index: 1;
+    padding: 50%;
+    margin: 0px;
+  }
+  #active1:checked ~ .hamburger {
+    position: fixed;
+    right: 0;
+  }
+  nav {
+    height: 50px;
+  }
+  .logo {
+    font-size: 5vw;
+  }
+  .hamburger {
+    color: black;
+    display: block;
+    margin-right: 5vw;
+    z-index: 2;
+  }
+  .abt-img {
+    display: none;
+  }
+  .page1 {
+    padding: 15vw 0;
+  }
+  .page2 {
+    padding: 15vw 0;
+  }
+  .about {
+    width: 80vw;
+  }
+  .about h2 {
+    font-size: 8vw;
+    margin-bottom: 2vw;
+  }
+  .about h4 {
+    font-size: 6vw;
+    font-weight: 400;
+    margin-bottom: 1vw;
+    color: #2d2d2d;
+  }
+  .about h6 {
+    font-weight: 400;
+    color: #2e2e2e;
+    font-size: 4vw;
+    margin: 0 0 4vw 0;
+  }
+  .info-img {
+    display: none;
+  }
+  .page2 h1 {
+    font-size: 8vw;
+    /* height: vw; */
+    margin: 4vw 0;
+  }
+  .info {
+    font-size: 4vw;
+    line-height: 6vw;
+  }
+  .copyright {
+    font-size: 4vw;
+  }
+}
