@@ -103,6 +103,9 @@ nav {
   align-items: center;
   justify-content: space-around;
 }
+.page2,.page4{
+  background-color: #f8f8f8;
+}
 .left {
   padding-left: 20px;
   width: 50%;
